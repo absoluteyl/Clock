@@ -6,7 +6,7 @@ contract Clock {
   uint256 public alarm1;
   uint256 public alarm2;
 
-  constructor(uint256 _alarm1) {
+  function __Clock_init(uint256 _alarm1) public {
     owner = msg.sender;
     alarm1 = _alarm1;
   }
@@ -22,6 +22,4 @@ contract Clock {
   function changeOwner(address _newOwner) public {
     owner = _newOwner;
   }
-
 }
-
