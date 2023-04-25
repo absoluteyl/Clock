@@ -5,8 +5,11 @@ contract Clock {
   address public owner;
   uint256 public alarm1;
   uint256 public alarm2;
+  bool  public initialized;
 
   function __Clock_init(uint256 _alarm1) public {
+    require(!initialized, "already initialized");
+    initialized = true;
     owner = msg.sender;
     alarm1 = _alarm1;
   }
